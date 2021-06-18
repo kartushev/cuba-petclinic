@@ -9,5 +9,5 @@ export class Config extends BaseUuidEntity {
     name?: string | null;
     value?: string | null;
 }
-export type ConfigViewName = "_minimal" | "_local" | "_base" | "appProperties";
-export type ConfigView<V extends ConfigViewName> = V extends "_local" ? Pick<Config, "id" | "name" | "value"> : V extends "_base" ? Pick<Config, "id" | "name" | "value"> : V extends "appProperties" ? Pick<Config, "id" | "version" | "createTs" | "createdBy" | "updateTs" | "updatedBy" | "name" | "value"> : never;
+export type ConfigViewName = "_base" | "_local" | "_minimal" | "appProperties";
+export type ConfigView<V extends ConfigViewName> = V extends "_base" ? Pick<Config, "id" | "name" | "value"> : V extends "_local" ? Pick<Config, "id" | "name" | "value"> : V extends "appProperties" ? Pick<Config, "id" | "version" | "createTs" | "createdBy" | "updateTs" | "updatedBy" | "name" | "value"> : never;

@@ -12,5 +12,5 @@ export class EntityStatistics extends BaseUuidEntity {
     lazyCollectionThreshold?: number | null;
     lookupScreenThreshold?: number | null;
 }
-export type EntityStatisticsViewName = "_minimal" | "_local" | "_base";
-export type EntityStatisticsView<V extends EntityStatisticsViewName> = V extends "_local" ? Pick<EntityStatistics, "id" | "name" | "instanceCount" | "fetchUI" | "maxFetchUI" | "lazyCollectionThreshold" | "lookupScreenThreshold"> : V extends "_base" ? Pick<EntityStatistics, "id" | "name" | "instanceCount" | "fetchUI" | "maxFetchUI" | "lazyCollectionThreshold" | "lookupScreenThreshold"> : never;
+export type EntityStatisticsViewName = "_base" | "_local" | "_minimal";
+export type EntityStatisticsView<V extends EntityStatisticsViewName> = V extends "_base" ? Pick<EntityStatistics, "id" | "name" | "instanceCount" | "fetchUI" | "maxFetchUI" | "lazyCollectionThreshold" | "lookupScreenThreshold"> : V extends "_local" ? Pick<EntityStatistics, "id" | "name" | "instanceCount" | "fetchUI" | "maxFetchUI" | "lazyCollectionThreshold" | "lookupScreenThreshold"> : never;

@@ -4,5 +4,5 @@ export class CategoryAttributeEnumValue extends BaseUuidEntity {
     value?: string | null;
     localizedValues?: string | null;
 }
-export type CategoryAttributeEnumValueViewName = "_minimal" | "_local" | "_base";
+export type CategoryAttributeEnumValueViewName = "_base" | "_local" | "_minimal";
 export type CategoryAttributeEnumValueView<V extends CategoryAttributeEnumValueViewName> = never;

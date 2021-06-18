@@ -6,5 +6,5 @@ export class LockDescriptor extends BaseUuidEntity {
     name?: string | null;
     timeoutSec?: number | null;
 }
-export type LockDescriptorViewName = "_minimal" | "_local" | "_base";
-export type LockDescriptorView<V extends LockDescriptorViewName> = V extends "_local" ? Pick<LockDescriptor, "id" | "name" | "timeoutSec"> : V extends "_base" ? Pick<LockDescriptor, "id" | "name" | "timeoutSec"> : never;
+export type LockDescriptorViewName = "_base" | "_local" | "_minimal";
+export type LockDescriptorView<V extends LockDescriptorViewName> = V extends "_base" ? Pick<LockDescriptor, "id" | "name" | "timeoutSec"> : V extends "_local" ? Pick<LockDescriptor, "id" | "name" | "timeoutSec"> : never;

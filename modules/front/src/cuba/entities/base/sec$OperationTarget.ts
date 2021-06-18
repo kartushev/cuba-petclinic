@@ -8,5 +8,5 @@ export class OperationPermissionTarget extends AbstractPermissionTarget {
     localName?: string | null;
     entityMetaClassName?: string | null;
 }
-export type OperationPermissionTargetViewName = "_minimal" | "_local" | "_base";
+export type OperationPermissionTargetViewName = "_base" | "_local" | "_minimal";
 export type OperationPermissionTargetView<V extends OperationPermissionTargetViewName> = never;

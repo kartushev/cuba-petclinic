@@ -7,5 +7,5 @@ export class LoggedAttribute extends BaseUuidEntity {
     entity?: LoggedEntity | null;
     name?: string | null;
 }
-export type LoggedAttributeViewName = "_minimal" | "_local" | "_base";
-export type LoggedAttributeView<V extends LoggedAttributeViewName> = V extends "_local" ? Pick<LoggedAttribute, "id" | "name"> : V extends "_base" ? Pick<LoggedAttribute, "id" | "name"> : never;
+export type LoggedAttributeViewName = "_base" | "_local" | "_minimal";
+export type LoggedAttributeView<V extends LoggedAttributeViewName> = V extends "_base" ? Pick<LoggedAttribute, "id" | "name"> : V extends "_local" ? Pick<LoggedAttribute, "id" | "name"> : never;

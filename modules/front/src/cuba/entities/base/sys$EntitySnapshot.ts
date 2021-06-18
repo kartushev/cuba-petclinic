@@ -13,5 +13,5 @@ export class EntitySnapshot extends BaseUuidEntity {
     label?: string | null;
     changeDate?: any | null;
 }
-export type EntitySnapshotViewName = "_minimal" | "_local" | "_base" | "entitySnapshot.browse";
-export type EntitySnapshotView<V extends EntitySnapshotViewName> = V extends "_local" ? Pick<EntitySnapshot, "id" | "viewXml" | "snapshotXml" | "entityMetaClass" | "snapshotDate" | "label" | "changeDate"> : V extends "_base" ? Pick<EntitySnapshot, "id" | "viewXml" | "snapshotXml" | "entityMetaClass" | "snapshotDate" | "label" | "changeDate"> : V extends "entitySnapshot.browse" ? Pick<EntitySnapshot, "id" | "viewXml" | "snapshotXml" | "entityMetaClass" | "snapshotDate" | "label" | "changeDate" | "createTs" | "author"> : never;
+export type EntitySnapshotViewName = "_base" | "_local" | "_minimal" | "entitySnapshot.browse";
+export type EntitySnapshotView<V extends EntitySnapshotViewName> = V extends "_base" ? Pick<EntitySnapshot, "id" | "viewXml" | "snapshotXml" | "entityMetaClass" | "snapshotDate" | "label" | "changeDate"> : V extends "_local" ? Pick<EntitySnapshot, "id" | "viewXml" | "snapshotXml" | "entityMetaClass" | "snapshotDate" | "label" | "changeDate"> : V extends "entitySnapshot.browse" ? Pick<EntitySnapshot, "id" | "viewXml" | "snapshotXml" | "entityMetaClass" | "snapshotDate" | "label" | "changeDate" | "createTs" | "author"> : never;

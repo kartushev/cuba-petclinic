@@ -11,5 +11,5 @@ export class ScreenHistoryEntity extends BaseUuidEntity {
     entityRef?: any | null;
     displayUser?: string | null;
 }
-export type ScreenHistoryEntityViewName = "_minimal" | "_local" | "_base" | "browse";
-export type ScreenHistoryEntityView<V extends ScreenHistoryEntityViewName> = V extends "_local" ? Pick<ScreenHistoryEntity, "id" | "caption" | "url" | "displayUser"> : V extends "_base" ? Pick<ScreenHistoryEntity, "id" | "caption" | "url" | "displayUser"> : V extends "browse" ? Pick<ScreenHistoryEntity, "id" | "caption" | "url" | "displayUser" | "user" | "substitutedUser" | "createTs"> : never;
+export type ScreenHistoryEntityViewName = "_base" | "_local" | "_minimal" | "browse";
+export type ScreenHistoryEntityView<V extends ScreenHistoryEntityViewName> = V extends "_base" ? Pick<ScreenHistoryEntity, "id" | "caption" | "url" | "displayUser"> : V extends "_local" ? Pick<ScreenHistoryEntity, "id" | "caption" | "url" | "displayUser"> : V extends "browse" ? Pick<ScreenHistoryEntity, "id" | "caption" | "url" | "displayUser" | "user" | "substitutedUser" | "createTs"> : never;

@@ -12,5 +12,5 @@ export class Presentation extends BaseUuidEntity {
     updateTs?: any | null;
     updatedBy?: string | null;
 }
-export type PresentationViewName = "_minimal" | "_local" | "_base" | "app";
-export type PresentationView<V extends PresentationViewName> = V extends "_minimal" ? Pick<Presentation, "id" | "name"> : V extends "_local" ? Pick<Presentation, "id" | "componentId" | "name" | "xml" | "autoSave"> : V extends "_base" ? Pick<Presentation, "id" | "name" | "componentId" | "xml" | "autoSave"> : V extends "app" ? Pick<Presentation, "id" | "componentId" | "name" | "xml" | "user" | "autoSave"> : never;
+export type PresentationViewName = "_base" | "_local" | "_minimal" | "app";
+export type PresentationView<V extends PresentationViewName> = V extends "_base" ? Pick<Presentation, "id" | "name" | "componentId" | "xml" | "autoSave"> : V extends "_local" ? Pick<Presentation, "id" | "componentId" | "name" | "xml" | "autoSave"> : V extends "_minimal" ? Pick<Presentation, "id" | "name"> : V extends "app" ? Pick<Presentation, "id" | "componentId" | "name" | "xml" | "user" | "autoSave"> : never;

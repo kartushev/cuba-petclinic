@@ -5,5 +5,5 @@ export class LocalizedConstraintMessage extends StandardEntity {
     operationType?: any | null;
     values?: string | null;
 }
-export type LocalizedConstraintMessageViewName = "_minimal" | "_local" | "_base";
-export type LocalizedConstraintMessageView<V extends LocalizedConstraintMessageViewName> = V extends "_local" ? Pick<LocalizedConstraintMessage, "id" | "entityName" | "operationType" | "values"> : V extends "_base" ? Pick<LocalizedConstraintMessage, "id" | "entityName" | "operationType" | "values"> : never;
+export type LocalizedConstraintMessageViewName = "_base" | "_local" | "_minimal";
+export type LocalizedConstraintMessageView<V extends LocalizedConstraintMessageViewName> = V extends "_base" ? Pick<LocalizedConstraintMessage, "id" | "entityName" | "operationType" | "values"> : V extends "_local" ? Pick<LocalizedConstraintMessage, "id" | "entityName" | "operationType" | "values"> : never;

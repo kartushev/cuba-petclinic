@@ -11,5 +11,5 @@ export class ScheduledExecution extends BaseUuidEntity {
     result?: string | null;
     durationSec?: any | null;
 }
-export type ScheduledExecutionViewName = "_minimal" | "_local" | "_base";
-export type ScheduledExecutionView<V extends ScheduledExecutionViewName> = V extends "_local" ? Pick<ScheduledExecution, "id" | "server" | "startTime" | "finishTime" | "result" | "durationSec"> : V extends "_base" ? Pick<ScheduledExecution, "id" | "server" | "startTime" | "finishTime" | "result" | "durationSec"> : never;
+export type ScheduledExecutionViewName = "_base" | "_local" | "_minimal";
+export type ScheduledExecutionView<V extends ScheduledExecutionViewName> = V extends "_base" ? Pick<ScheduledExecution, "id" | "server" | "startTime" | "finishTime" | "result" | "durationSec"> : V extends "_local" ? Pick<ScheduledExecution, "id" | "server" | "startTime" | "finishTime" | "result" | "durationSec"> : never;

@@ -1,3 +1,4 @@
+import {FooManagement} from './app/foo/FooManagement';
 import {PetclinicVisitManagement} from './app/visit/PetclinicVisitManagement';
 import {PetclinicVetManagement} from './app/vet/PetclinicVetManagement';
 import {PetclinicSpecialtyManagement} from './app/specialty/PetclinicSpecialtyManagement';
@@ -57,3 +58,11 @@ const mastedDataMenu = {
   ]
 };
 menuItems.push(mastedDataMenu);
+
+
+menuItems.push({
+  pathPattern: '/fooManagement/:entityId?',
+  menuLink: '/fooManagement',
+  component: FooManagement,
+  caption: 'FooManagement'
+});

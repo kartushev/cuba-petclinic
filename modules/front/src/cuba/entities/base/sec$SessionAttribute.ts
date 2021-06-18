@@ -8,5 +8,5 @@ export class SessionAttribute extends StandardEntity {
     group?: Group | null;
     datatypeCaption?: string | null;
 }
-export type SessionAttributeViewName = "_minimal" | "_local" | "_base" | "edit";
-export type SessionAttributeView<V extends SessionAttributeViewName> = V extends "_local" ? Pick<SessionAttribute, "id" | "name" | "stringValue" | "datatype" | "datatypeCaption"> : V extends "_base" ? Pick<SessionAttribute, "id" | "name" | "stringValue" | "datatype" | "datatypeCaption"> : V extends "edit" ? Pick<SessionAttribute, "id" | "name" | "stringValue" | "datatype" | "datatypeCaption" | "group"> : never;
+export type SessionAttributeViewName = "_base" | "_local" | "_minimal" | "edit";
+export type SessionAttributeView<V extends SessionAttributeViewName> = V extends "_base" ? Pick<SessionAttribute, "id" | "name" | "stringValue" | "datatype" | "datatypeCaption"> : V extends "_local" ? Pick<SessionAttribute, "id" | "name" | "stringValue" | "datatype" | "datatypeCaption"> : V extends "edit" ? Pick<SessionAttribute, "id" | "name" | "stringValue" | "datatype" | "datatypeCaption" | "group"> : never;

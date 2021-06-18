@@ -10,5 +10,5 @@ export class Pet extends NamedEntity {
     generation?: Generation | null;
     owner?: Owner | null;
 }
-export type PetViewName = "_minimal" | "_local" | "_base" | "pet-with-owner-and-type" | "pet-with-type";
-export type PetView<V extends PetViewName> = V extends "_minimal" ? Pick<Pet, "id" | "identificationNumber" | "name"> : V extends "_local" ? Pick<Pet, "id" | "identificationNumber" | "birthDate" | "generation" | "name"> : V extends "_base" ? Pick<Pet, "id" | "identificationNumber" | "name" | "birthDate" | "generation"> : V extends "pet-with-owner-and-type" ? Pick<Pet, "id" | "identificationNumber" | "birthDate" | "generation" | "name" | "type" | "owner"> : V extends "pet-with-type" ? Pick<Pet, "id" | "identificationNumber" | "birthDate" | "generation" | "name" | "type"> : never;
+export type PetViewName = "_base" | "_local" | "_minimal" | "pet-with-owner-and-type" | "pet-with-type";
+export type PetView<V extends PetViewName> = V extends "_base" ? Pick<Pet, "id" | "identificationNumber" | "name" | "birthDate" | "generation"> : V extends "_local" ? Pick<Pet, "id" | "identificationNumber" | "birthDate" | "generation" | "name"> : V extends "_minimal" ? Pick<Pet, "id" | "identificationNumber" | "name"> : V extends "pet-with-owner-and-type" ? Pick<Pet, "id" | "identificationNumber" | "birthDate" | "generation" | "name" | "type" | "owner"> : V extends "pet-with-type" ? Pick<Pet, "id" | "identificationNumber" | "birthDate" | "generation" | "name" | "type"> : never;

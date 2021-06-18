@@ -14,5 +14,5 @@ export class EntityLogItem extends BaseUuidEntity {
     attributes?: EntityLogAttr | null;
     changes?: string | null;
 }
-export type EntityLogItemViewName = "_minimal" | "_local" | "_base" | "logView";
-export type EntityLogItemView<V extends EntityLogItemViewName> = V extends "_local" ? Pick<EntityLogItem, "id" | "eventTs" | "type" | "entity" | "entityInstanceName" | "changes"> : V extends "_base" ? Pick<EntityLogItem, "id" | "eventTs" | "type" | "entity" | "entityInstanceName" | "changes"> : V extends "logView" ? Pick<EntityLogItem, "id" | "eventTs" | "type" | "entity" | "entityInstanceName" | "changes" | "user" | "entityRef"> : never;
+export type EntityLogItemViewName = "_base" | "_local" | "_minimal" | "logView";
+export type EntityLogItemView<V extends EntityLogItemViewName> = V extends "_base" ? Pick<EntityLogItem, "id" | "eventTs" | "type" | "entity" | "entityInstanceName" | "changes"> : V extends "_local" ? Pick<EntityLogItem, "id" | "eventTs" | "type" | "entity" | "entityInstanceName" | "changes"> : V extends "logView" ? Pick<EntityLogItem, "id" | "eventTs" | "type" | "entity" | "entityInstanceName" | "changes" | "user" | "entityRef"> : never;

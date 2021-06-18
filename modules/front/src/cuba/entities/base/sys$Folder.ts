@@ -6,5 +6,5 @@ export class Folder extends StandardEntity {
     sortOrder?: number | null;
     tabName?: string | null;
 }
-export type FolderViewName = "_minimal" | "_local" | "_base";
-export type FolderView<V extends FolderViewName> = V extends "_local" ? Pick<Folder, "id" | "name" | "sortOrder" | "tabName"> : V extends "_base" ? Pick<Folder, "id" | "name" | "sortOrder" | "tabName"> : never;
+export type FolderViewName = "_base" | "_local" | "_minimal";
+export type FolderView<V extends FolderViewName> = V extends "_base" ? Pick<Folder, "id" | "name" | "sortOrder" | "tabName"> : V extends "_local" ? Pick<Folder, "id" | "name" | "sortOrder" | "tabName"> : never;
